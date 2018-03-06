@@ -1,15 +1,17 @@
+
 <template>
-    <Machine v-for="machine in machines"
-             :key="machine.id"
-             v-bind:machine="machine"
-             v-if="!hideOffMachines || machine.isOn">
-    </Machine>
+  '<li :class="{ active: machine.isOn }">{{machine.name}}'
+  '<br />'
+  '<toggle-button :value="machine.isOn" @change="machine.isOn = !machine.isOn"/>'
+  '</li>'
 </template>
 
 
 <script>
     export default {
-        data() {
+      props: ['machine'],
+      name: 'Machine',
+      data() {
 
 
         }

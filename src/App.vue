@@ -3,12 +3,9 @@
         <img src="./assets/coffee-bean.jpg">
         <h1>{{ msg }}</h1>
         <div>
-            <h4>
-                Cacher les machines éteintes
-                <toggle-button :value="hideOffMachines" @change="hideOffMachines = !hideOffMachines"/>
-            </h4>
-<!--            <ButtonMachineIsOn v-bind:key="machine.id"
-                               v-bind:testprop="hideOffMachines"></ButtonMachineIsOn>-->
+            <ButtonMachineIsOn v-bind:testprop="hideOffMachines"
+                               v-on:hideMachinesON="changeStatus()">
+            </ButtonMachineIsOn>
         </div>
         <hr>
         <ul>
@@ -44,12 +41,13 @@
         },
         methods: {
             onMachinesListClick: function() {
-                window.alert('La liste des machines est en cours de chargement...')
-            }
-        },
-        methods: {
+              window.alert('La liste des machines est en cours de chargement...')
+            },
             onMapClick: function () {
-                window.alert('La carte de géolocalisation est en cours de chargement...')
+              window.alert('La carte de géolocalisation est en cours de chargement...')
+            },
+            changeStatus: function() {
+              this.hideOffMachines = !this.hideOffMachines
             }
         }
     };

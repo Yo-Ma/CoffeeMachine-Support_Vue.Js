@@ -1,26 +1,17 @@
 import Vue from 'vue';
 import App from './App.vue';
 import ToggleButton from 'vue-js-toggle-button';
+import Machines from './Machines.vue';
 import MachinesList from './MachinesList.vue';
 import MachinesMap from './MachinesMap.vue';
 import FormAddMachine from './FormAddMachine.vue';
+import ButtonMachineIsOn from './ButtonMachineIsOn';
 
 Vue.use(ToggleButton);
 
-// Si le template devient complexe, cette facon de créer un composant devient limitée !
-Vue.component('Machine', {
-    props: ['machine'],
-    template: '<li :class="{ active: machine.isOn }">{{machine.name}}' +
-    '<br />' +
-    '<toggle-button :value="machine.isOn" ' +
-    '@change="machine.isOn = !machine.isOn"/>' +
-    '</li>'
-});
+Vue.component('Machine', Machines);
 
-Vue.component('ButtonMachineIsOn', {
-    template: '<toggle-button :value="hideOffMachines" ' +
-    '@change="hideOffMachines = !hideOffMachines"/>'
-});
+Vue.component('ButtonMachineIsOn', ButtonMachineIsOn);
 
 Vue.component('Listing', MachinesList);
 
