@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import App from './App.vue';
 import ToggleButton from 'vue-js-toggle-button';
+import MachinesList from 'MachinesList';
+import MachinesMap from 'MachinesMap';
 
 Vue.use(ToggleButton);
 
@@ -19,6 +21,9 @@ Vue.component('ButtonMachineIsOn', {
     '@change="hideOffMachines = !hideOffMachines"/>'
 });
 
+Vue.component('Listing', MachinesList);
+
+Vue.component('Mapping', MachinesMap);
 
 new Vue({
             el: '#app',

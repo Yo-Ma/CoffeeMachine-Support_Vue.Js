@@ -64,6 +64,16 @@
                                        isOn: this.buffer.isOn
                                    });
             }
+        },
+        methods: {
+            onMachinesListClick: function() {
+                window.alert('La liste des machines est en cours de chargement...')
+            }
+        },
+        methods: {
+            onMapClick: function () {
+                window.alert('La carte de géolocalisation est en cours de chargement...')
+            }
         }
     };
 </script>
