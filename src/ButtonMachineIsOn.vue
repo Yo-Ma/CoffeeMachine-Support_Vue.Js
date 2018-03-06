@@ -9,12 +9,13 @@
 
 <script>
     export default {
-
+      name: 'ButtonMachineIsOn',
+      props: ['testprop']
     }
 
 </script>
 
 
-<style>
+<style scoped>
 
 </style>
